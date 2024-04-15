@@ -109,7 +109,9 @@ pipeline{
         stage ("Deploy"){
             steps{
                 script{
+                echo '<--------------- Deployment Started --------------->' 
                     './deploy.sh'
+                echo '<--------------- Deployment Ended --------------->' 
                 }
             }
         }
