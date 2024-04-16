@@ -106,12 +106,21 @@ pipeline{
     }
 
 
-        stage ("Deploy"){
+        //stage ("Deploy"){
+          //  steps{
+            //    script{
+              //  echo '<--------------- Deployment Started --------------->' 
+                // sh './deploy.sh'
+                //echo '<--------------- Deployment Ended --------------->' 
+                //}
+            //}
+        //}
+
+
+        stage("Deploy"){
             steps{
                 script{
-                echo '<--------------- Deployment Started --------------->' 
-                 sh './deploy.sh'
-                echo '<--------------- Deployment Ended --------------->' 
+                    sh 'helm install ttrend ttrend-0.1.0.tgz'
                 }
             }
         }
